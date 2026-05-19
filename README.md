@@ -25,7 +25,7 @@ A Python tool that transforms rough notes into polished, professional emails usi
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/ai-email-generator.git
+   git clone https://github.com/jaybhayeom/ai-email-generator.git
    cd ai-email-generator
    ```
 
