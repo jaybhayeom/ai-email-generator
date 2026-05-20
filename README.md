@@ -1,23 +1,22 @@
-# 📧 AI Email Generator
+# 📧 AI Email Generator v2.0
 
-A Python tool that transforms rough notes into polished, professional emails using Google's Gemini AI.
+A Python command-line tool that converts your rough notes into polished, professional emails using Google's Gemini AI — with tone selection and email history.
 
 ---
 
 ## ✨ Features
 
-- Converts casual notes into professionally written emails
-- Maintains appropriate tone based on context
-- Uses `[Bracketed Placeholders]` when information is missing
-- Simple command-line interface
-- Powered by Gemini 2.5 Flash
+- 🎯 **3 Tone Options** — Formal, Friendly, or Urgent
+- 💾 **Email History** — Every email auto-saved to `email_history.csv` with timestamp
+- 📋 **View Past Emails** — Browse all previously generated emails anytime
+- 🔒 **Secure API Handling** — API key stored safely in `.env`, never in code
+- ⚡ **Powered by Gemini 2.5 Flash**
 
 ---
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-
 - Python 3.8 or higher
 - A [Google AI Studio](https://aistudio.google.com/) account with a Gemini API key
 
@@ -36,11 +35,7 @@ A Python tool that transforms rough notes into polished, professional emails usi
 
 3. **Set up your API key**
 
-   Create a `.env` file in the root of the project:
-   ```bash
-   cp .env.example .env
-   ```
-   Then open `.env` and add your actual API key:
+   Create a `.env` file in the project folder:
    ```
    GOOGLE_API_KEY=your_actual_api_key_here
    ```
@@ -49,31 +44,52 @@ A Python tool that transforms rough notes into polished, professional emails usi
 
 ## 💻 Usage
 
-Run the script from your terminal:
-
 ```bash
 python main.py
 ```
 
-You will be prompted to enter your notes. For example:
+You'll see a menu like this:
 
 ```
-Your Notes: Email to John at Acme Corp, following up on the proposal we sent last Monday. Ask if he has any questions and suggest a 30-min call this week.
+========================================
+     AI EMAIL GENERATOR  v2.0
+========================================
+
+What would you like to do?
+  [1] Generate a new email
+  [2] View email history
+  [3] Exit
 ```
 
-**Sample Output:**
+### Tone Options
 
+| Tone | Best For |
+|------|----------|
+| 📄 Formal | Clients, managers, official communication |
+| 😊 Friendly | Colleagues, people you know well |
+| 🚨 Urgent | Time-sensitive, action required immediately |
+
+### Example
+
+**Your Notes:**
+```
+Email to John at Acme Corp, following up on the proposal sent last Monday.
+Ask if he has questions and suggest a 30-min call this week.
+```
+
+**Tone:** Formal
+
+**Output:**
 ```
 Subject: Follow-Up: Proposal & Next Steps
 
 Dear John,
 
 I hope this message finds you well. I wanted to follow up on the proposal
-we sent over last Monday and see if you've had a chance to review it.
+we sent over last Monday and check if you had a chance to review it.
 
-Please don't hesitate to reach out if you have any questions or would like
-to discuss any aspect in more detail. I'd also be happy to schedule a brief
-30-minute call at your convenience this week.
+Please don't hesitate to reach out if you have any questions. I'd also be
+happy to schedule a brief 30-minute call at your convenience this week.
 
 Looking forward to hearing from you.
 
@@ -88,25 +104,26 @@ Best regards,
 ```
 ai-email-generator/
 │
-├── main.py            # Main application script
-├── requirements.txt   # Python dependencies
-├── .env.example       # Template for environment variables
-├── .env               # Your local API key (never committed)
-├── .gitignore         # Files excluded from version control
-└── README.md          # Project documentation
+├── main.py              # Main application
+├── requirements.txt     # Python dependencies
+├── .env.example         # API key template
+├── .env                 # Your local API key (never committed)
+├── .gitignore           # Files excluded from version control
+├── email_history.csv    # Auto-generated history (never committed)
+└── README.md            # Project documentation
 ```
 
 ---
 
 ## 🔐 Security
 
-Your API key is stored in a `.env` file which is listed in `.gitignore` and will **never** be uploaded to GitHub. Never hardcode API keys directly in your source code.
+Your API key lives in a `.env` file listed in `.gitignore` and will **never** be uploaded to GitHub. Never hardcode API keys directly in source code.
 
 ---
 
 ## 🛠️ Built With
 
-- [Google Generative AI Python SDK](https://github.com/google-gemini/generative-ai-python)
+- [Google GenAI Python SDK](https://github.com/googleapis/python-genai)
 - [python-dotenv](https://github.com/theskumar/python-dotenv)
 - [Gemini 2.5 Flash](https://deepmind.google/technologies/gemini/)
 
@@ -120,7 +137,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## 🙋 Author
 
-**OM JAYBHAYE**
+**Om Jaybhaye**
 
 - GitHub: [@jaybhayeom](https://github.com/jaybhayeom)
-- LinkedIn: [@OmJaybhaye](www.linkedin.com/in/om-jaybhaye-py)
+- LinkedIn: [@OmJaybhaye](https://www.linkedin.com/in/om-jaybhaye-py)
